@@ -8,6 +8,7 @@
 </head>
 <body>
     <my-title></my-title>
+
     <x-counter data-contador="9"></x-counter>
 
     <p is="word-count">Renan da silva lucilioo</p>
@@ -22,10 +23,31 @@
         teste de texto
     </p>
 
+    <ul is="expanding-list"></ul>
+
+    <custom-square
+        l="100"
+        c="red"
+    ></custom-square>
+    <button id="change-color">Change color</button>
+
     <script src="./components/title/title.js"></script>
     <script src="./components/counter/counter.js"></script>
     <script src="./components/word-count/word-count.js"></script>
     <script src="./components/pop-up-info/pop-up-info.js"></script>
     <script src="./components/link-css/link-css.js"></script>
+    <script src="./components/expanding-list/expanding-list.ts"></script>
+    <script src="./components/custom-square/custom-square.js"></script>
+
+    <script>
+        document
+            .querySelector('#change-color')
+            .addEventListener('click', () => {
+                const square = document.querySelector('custom-square');
+                square.setAttribute('l', '120')
+                console.log(square.getAttribute('l'));
+                square.setAttribute('c', 'blue')
+            })
+    </script>
 </body>
 </html>
