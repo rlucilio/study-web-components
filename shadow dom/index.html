@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow DOM</title>
+</head>
+<body>
+     
+    <div class="open"></div>
+    <div class="closed"></div>
+
+    <script>
+        const divOpen = document.querySelector('.open');
+        const shadowElementOpen = divOpen.attachShadow({mode: 'open'});
+        console.log('divOpen', divOpen.shadowRoot);
+
+        const para = document.createElement('p')
+        para.innerText = 'Oi tudo bem';
+        divOpen.shadowRoot.appendChild(para); // Linkou o "para"
+            
+        const divClosed = document.querySelector('.closed')
+        const shadowElementClosed = divClosed.attachShadow({mode: 'closed'});
+        console.log('divClosed', divClosed.shadowRoot);
+
+        const para2 = document.createElement('p')
+        para2.innerText = 'Oi tudo bem';
+        divOpen.divClosed.appendChild(para2); // Não linkou o "param"
+    </script>
+</body>
+</html>
