@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Template</title>
+</head>
+
+<body>
+
+    <template id="my-p">
+        <style>
+            p {
+                color: white;
+                background-color: #666;
+                padding: 5px;
+            }
+        </style>
+
+        <p>
+            <slot name="texto">Texto padrão</slot>
+        </p>
+    </template>
+
+    <my-p>
+        <p slot="texto">Renan Lucilio</p>
+    </my-p>
+
+    <my-p>
+        <ul slot="texto">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+    </my-p>
+
+    <template id="element-details-template">
+        <style>
+            details {
+                font-family: "Open Sans Light", Helvetica, Arial
+            }
+
+            .name {
+                font-weight: bold;
+                columns: #217ac0;
+                font-size: 120%;
+            }
+
+            h4 {
+                margin: 10px 0 -8px 0;
+            }
+
+            h4 span {
+                background: #217ac0;
+                padding: 2px 6px 2px 6px;
+                border: 1px solid #cee9f9;
+                border-radius: 4px;
+                color: white;
+            }
+
+            .attributes {
+                margin-left: 22px;
+                font-size: 90%;
+            }
+
+            .attributes p {
+                margin-left: 16px;
+                font-style: italic;
+            }
+        </style>
+        <details>
+            <summary>
+                <span>
+                    <code class="name">
+                        &lt;
+                        <slot name="nome">NEED NAME</slot>
+                        &gt;
+                    </code>
+                    <i class="desc">
+                        <slot name="descricao">NAME</slot>
+                    </i>
+                </span>
+            </summary>
+            <div class="attributes">
+                <h4><span>Atributos</span></h4>
+                <slot name="atributos">
+                    <p>Vazio</p>
+                </slot>
+            </div>
+        </details>
+        <hr>
+    </template>
+
+    <element-details>
+        <span slot="nome">Slot</span>
+        <span slot="descricao">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos exercitationem
+            officia assumenda asperiores fuga amet deleniti nulla quasi velit sapiente? Doloribus autem nobis quod ad,
+            eos provident quisquam delectus temporibus.
+        </span>
+        <dl slot="atributos">
+            <dt>Nome</dt>
+            <dd>Nome do slot</dd>
+        </dl>
+    </element-details>
+
+    <element-details>
+        <span slot="nome">template</span>
+        <span slot="descricao">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores facilis dolorem minima harum maxime eligendi recusandae vero facere! Laudantium totam, pariatur et quidem dicta quasi recusandae harum atque corrupti obcaecati!
+        </span>
+    </element-details>
+
+    <script src="./src/exemplo mais complexo.js"></script>
+    <script src="./src/template-customElements-shadowDom.js"></script>
+
+</body>
+
+</html>
