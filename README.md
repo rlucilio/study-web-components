@@ -32,7 +32,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ## :computer: Como Rodar
 ### Pré-requisitos
 Não tem pré-requisitos
-### 🎲 Rodando o Back End (servidor)
+### 🎲 Rodando
 ```bash
 # Clone este repositório
 $ git clone <https://github.com/rlucilio/estudos-web-components.git>
