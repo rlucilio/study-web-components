@@ -35,10 +35,10 @@ Não tem pré-requisitos
 ### 🎲 Rodando
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/rlucilio/estudos-web-components.git>
+$ git clone https://github.com/rlucilio/study-web-components.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd estudos-web-components
+$ cd study-web-components
 
 # Abrir no navegador os index.html
 $ abrir com navegador os index.html
